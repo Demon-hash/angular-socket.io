@@ -1,0 +1,22 @@
+<form [formGroup]="form" class="register-form">
+  <app-text-input [group]="form" control="firstName" id="firstName" label="Имя"/>
+  <app-text-input [group]="form" control="lastName" id="lastName" label="Фамилия"/>
+  <app-text-input [group]="form" control="email" id="email" label="Электонный адрес"/>
+  <app-text-input [group]="form" control="password" id="password" label="Пароль"/>
+  <app-button
+    type="submit"
+    (click)="register()"
+    [disabled]="form.invalid || (loading$ | async)"
+    label="Зарегистрироваться"
+  />
+  <div class="inline-flex items-center justify-center w-full">
+    <hr class="w-64 h-px my-2 bg-gray-200 border-0">
+    <span class="absolute px-3 font-medium text-gray-200 -translate-x-1/2 bg-background left-1/2">ИЛИ</span>
+  </div>
+  <app-button
+    type="button"
+    [routerLink]="['/', LOGIN_URL]"
+    severity="secondary"
+    label="Авторизироватся"
+  />
+</form>

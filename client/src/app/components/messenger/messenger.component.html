@@ -1,0 +1,4 @@
+<div id="messenger" class="flex">
+  <app-my-active-rooms (onRoomSelected)="room = $event" class="border-r-2 border-background-border"/>
+  <app-messages-list [selectedRoom]="room"/>
+</div>

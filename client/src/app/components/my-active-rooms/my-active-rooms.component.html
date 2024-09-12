@@ -1,0 +1,13 @@
+<div class="rooms">
+  @for (room of rooms$ | async; track room) {
+    <div class="room" (click)="selectRoom(room)">
+      <div class="metadata">
+        <img [src]="room.avatar" alt="avatar">
+        @if(room.online) {
+          <div class="online-mark"></div>
+        }
+      </div>
+      <h1 class="text-black"> {{ room.firstName }} {{ room.lastName }}</h1>
+    </div>
+  }
+</div>

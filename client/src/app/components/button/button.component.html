@@ -1,0 +1,8 @@
+<button
+  [type]="type"
+  (click)="onClick($event)"
+  [disabled]="disabled"
+  [class]="SEVERITY_CLASSES[severity]"
+>
+  {{ label }}
+</button>

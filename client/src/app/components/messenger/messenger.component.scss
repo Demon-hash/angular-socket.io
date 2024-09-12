@@ -1,0 +1,10 @@
+#messenger {
+  height: 100%;
+}
+
+:host ::ng-deep {
+  app-my-active-rooms {
+    width: 25rem;
+    background: #1F2937;
+  }
+}

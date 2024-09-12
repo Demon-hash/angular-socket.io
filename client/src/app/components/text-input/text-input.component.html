@@ -1,0 +1,20 @@
+<div class="input-wrapper" [formGroup]="group">
+  @if (group.get(control); as self) {
+    <label [for]="id" class="block mb-2 text-sm font-medium text-gray-200">
+      {{ label }}
+      @if (self.hasValidator(Validators.required)) {
+        <span class="text-red-500">*</span>
+      }
+    </label>
+    <input
+      [formControlName]="control"
+      [id]="id"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5"
+    >
+    @if (self?.errors && (self.dirty || !self.untouched)) {
+      <small class="text-sm text-red-500" >
+        {{ getControlErrorName(self.errors) }}
+      </small>
+    }
+  }
+</div>

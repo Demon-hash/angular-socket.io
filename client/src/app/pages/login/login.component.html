@@ -1,0 +1,10 @@
+<form [formGroup]="form" class="login-form">
+  <app-text-input [group]="form" control="email" id="email" label="Электонный адрес"/>
+  <app-text-input [group]="form" control="password" id="password" label="Пароль"/>
+  <app-button type="submit" (click)="login()" [disabled]="form.invalid || (loading$ | async)" label="Авторизироватся" />
+  <div class="inline-flex items-center justify-center w-full">
+    <hr class="w-64 h-px my-2 bg-gray-200 border-0">
+    <span class="absolute px-3 font-medium -translate-x-1/2 text-gray-200 bg-background left-1/2">ИЛИ</span>
+  </div>
+  <app-button type="button" [routerLink]="['/', REGISTER_URL]" label="Зарегистрироваться" severity="secondary" />
+</form>
